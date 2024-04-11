@@ -1,0 +1,97 @@
+import 'package:flutter/material.dart';
+import 'LoginPageMain.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
+
+
+Future main() async{
+  WidgetsFlutterBinding.ensureInitialized(); // Ensure flutter bindings are initialized.
+  if (kIsWeb) {
+    await Firebase.initializeApp(
+      options: const FirebaseOptions(apiKey: "AIzaSyCOY0LF-zCDLzXKCXzmo-r11bs2Yrwt1XA",
+       appId: "1:942815223560:web:15f7d0c9f96b2273c056bd",
+       messagingSenderId: "942815223560",
+       projectId: "trimafit-3c27a"));
+  }
+  await Firebase.initializeApp(); // Initialize Firebase.
+  runApp(TrimaFitApp());
+}
+
+class TrimaFitApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'TRIMAFIT',
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primarySwatch: Colors.yellow,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: Scaffold(
+        backgroundColor: Colors.grey[900],
+        body: const SafeArea(
+          child: LoginScreen(),
+        ),
+      ),
+    );
+  }
+}
+
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment:MainAxisAlignment.center,
+        children: <Widget>[
+          ClipRRect(
+  borderRadius: BorderRadius.circular(12.0),
+  child: Image.asset(
+    'assets/trimafitloga.png', // Replace with your local image asset path
+    height: 90.0, // Adjust height as needed
+    width: double.infinity,
+    fit: BoxFit.cover,
+  ),
+),
+
+          const SizedBox(height: 6), // Provides space between text and the image
+          ClipRRect(
+            borderRadius: BorderRadius.circular(12.0), // Curves the edges of the image
+            child: Image.asset(
+              'assets/loginimage.jpeg', // Make sure the image asset exists
+              height: 500.0,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
+          ),
+      
+          const SizedBox(height: 20), // Provides space between text and button
+          Center(
+            child: SizedBox(
+    width: double.infinity, // This will make the button take the full width of its parent container.
+    child: ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.yellow, // Button background color
+        foregroundColor: Colors.black, // Button text color
+        padding: const EdgeInsets.symmetric(vertical: 16.0), // Vertical padding
+        textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold), // Text style
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8), // Border radius for reduced curvature
+        ),
+      ),
+      onPressed: () {
+       Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPageMain()));
+      },
+      child: const Text('GET STARTED'), // The text should now remain on a single line. // Ensure the text stays in a single line
+            ),
+          ),
+          ),
+        ],
+      ),
+    );
+  }
+}
