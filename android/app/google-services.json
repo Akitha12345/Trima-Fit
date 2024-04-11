@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "615790560369",
+    "project_id": "trima-fit-4c05a",
+    "storage_bucket": "trima-fit-4c05a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:615790560369:android:b24e7528c32e58b4ca47d0",
+        "android_client_info": {
+          "package_name": "com.example.trimafitapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFcwbqwdcr5BD9TkUCrNbBJqA_e--iles"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
