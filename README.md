@@ -1,6 +1,6 @@
 # trimafitapp
 
-A new Flutter project.
+A new Flutter app that helps Sri Lankan community to stay healthy.
 
 ## Getting Started
 
