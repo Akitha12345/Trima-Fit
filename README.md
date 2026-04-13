@@ -1,4 +1,4 @@
-# TrimaFit
+# TrimaFit Mobile Application 
 
 A new Flutter app that helps Sri Lankan community to stay healthy.
 
